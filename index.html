@@ -60,10 +60,14 @@
 
     nav {
       margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
 
     nav a {
-      margin: 0 15px;
+      margin: 0 10px;
       color: #D4AF37; /* Gold */
       font-weight: bold;
       transition: color 0.3s ease;
@@ -96,21 +100,21 @@
     }
 
     #hero h2 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin: 0;
       z-index: 1;
       animation: fadeIn 2s ease-in;
     }
 
     #hero p {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       z-index: 1;
       animation: fadeIn 3s ease-in;
     }
 
     .cta-button {
       background: linear-gradient(135deg, #D4AF37, #F5E6CA); /* Gold Gradient */
-      padding: 15px 30px;
+      padding: 10px 20px;
       border-radius: 50px;
       color: #0F3D2E; /* Deep Green */
       font-weight: bold;
@@ -135,19 +139,19 @@
     /* About Section */
     #about {
       background: #F5E6CA; /* Warm Beige */
-      padding: 60px 20px;
+      padding: 40px 20px;
       color: #222222; /* Dark Charcoal */
     }
 
     #about h2 {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     #about p {
       max-width: 800px;
       margin: 0 auto;
-      font-size: 1.1rem;
-      line-height: 1.8;
+      font-size: 1rem;
+      line-height: 1.6;
       text-align: justify;
     }
 
@@ -155,19 +159,19 @@
     #amenities {
       background: #0F3D2E; /* Deep Green */
       color: #F5E6CA; /* Warm Beige */
-      padding: 60px 20px;
+      padding: 40px 20px;
     }
 
     .amenities-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
-      margin-top: 30px;
+      margin-top: 20px;
     }
 
     .amenity-card {
       background: rgba(245, 230, 202, 0.1); /* Warm Beige with transparency */
-      padding: 20px;
+      padding: 15px;
       border-radius: 10px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -178,7 +182,7 @@
     }
 
     .amenity-card i {
-      font-size: 2rem;
+      font-size: 1.5rem;
       color: #D4AF37; /* Gold */
       transition: transform 0.3s ease;
     }
@@ -189,28 +193,69 @@
 
     .amenity-card h3 {
       color: #D4AF37; /* Gold */
+      font-size: 1.2rem;
     }
 
     .amenity-card p {
       color: #F5E6CA; /* Warm Beige */
+      font-size: 0.9rem;
+    }
+
+    /* Ticket Prices and Park Hours Section */
+    #ticket-hours {
+      background: #F5E6CA; /* Warm Beige */
+      padding: 40px 20px;
+      color: #222222; /* Dark Charcoal */
+    }
+
+    .ticket-hours-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 800px;
+      margin: 0 auto;
+      gap: 20px;
+    }
+
+    .ticket-prices, .park-hours {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .ticket-prices h3, .park-hours h3 {
+      color: #D4AF37; /* Gold */
+      margin-bottom: 15px;
+    }
+
+    .ticket-prices ul, .park-hours ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .ticket-prices li, .park-hours li {
+      margin-bottom: 10px;
+      font-size: 1rem;
     }
 
     /* Masonry Gallery Section */
     #gallery {
       background: #2A2D34; /* Gunmetal Grey */
-      padding: 60px 20px;
+      padding: 40px 20px;
       color: #F5E6CA; /* Warm Beige */
+      overflow-x: auto; /* Enable horizontal scrolling */
     }
 
     .masonry-grid {
-      columns: 3 200px;
-      gap: 15px;
+      display: flex; /* Use flexbox for single row layout */
+      gap: 10px; /* Space between images */
+      padding-bottom: 10px; /* Add padding for scrollbar */
     }
 
     .masonry-grid img {
-      width: 100%;
+      width: 150px; /* Fixed width for images */
+      height: 100px; /* Fixed height for images */
       border-radius: 10px;
-      margin-bottom: 15px;
+      object-fit: cover; /* Ensure images cover the area without distortion */
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
     }
@@ -260,18 +305,18 @@
 
     /* Reviews Section */
     #reviews {
-      background: #F5E6CA; /* Gold */
+      background: #D4AF37; /* Gold */
       color: #0F3D2E; /* Deep Green */
-      padding: 60px 20px;
+      padding: 40px 20px;
     }
 
     .reviews-slider {
-      margin-top: 30px;
+      margin-top: 20px;
     }
 
     .review-card {
       background: rgba(245, 230, 202, 0.1); /* Warm Beige with transparency */
-      padding: 20px;
+      padding: 15px;
       border-radius: 10px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       margin: 0 10px;
@@ -291,7 +336,7 @@
     #contact {
       background: #222222; /* Dark Charcoal */
       color: #F5E6CA; /* Warm Beige */
-      padding: 60px 20px;
+      padding: 40px 20px;
       text-align: center; /* Centered content */
     }
 
@@ -329,6 +374,49 @@
     .social-icons a:hover {
       color: #F5E6CA; /* Warm Beige */
       transform: translateY(-5px);
+    }
+
+    /* Media Queries for Mobile Devices */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav a {
+        margin: 0 5px;
+        font-size: 0.9rem;
+      }
+
+      #hero h2 {
+        font-size: 2rem;
+      }
+
+      #hero p {
+        font-size: 1rem;
+      }
+
+      .cta-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+
+      .amenities-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+
+      .ticket-hours-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .masonry-grid {
+        flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+      }
+
+      .masonry-grid img {
+        width: 100px; /* Smaller images for mobile */
+        height: 75px;
+      }
     }
   </style>
 </head>
@@ -416,7 +504,7 @@
           <li>Adults: ৳50</li>
           <li>Children (5–12 years): ৳50</li>
           <li>Children (under 5): ৳50</li>
-          <li>Groups over 10: ৳40 each </li>
+          <li>Groups over 10: ৳40 each</li>
         </ul>
       </div>
       <div class="park-hours">
